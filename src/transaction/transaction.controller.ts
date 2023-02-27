@@ -56,6 +56,11 @@ export class TransactionController {
     });
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.transactionService.getOne(id);
+  }
+
   @ApiOperation({ summary: "Удалить платеж по Id" })
   @ApiResponse({ status: 200, type: Transaction })
   @Delete(":id")

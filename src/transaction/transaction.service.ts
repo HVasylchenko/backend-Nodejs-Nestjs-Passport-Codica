@@ -51,6 +51,8 @@ export class TransactionsService {
   }
 
   async getOne(id: number): Promise<Transaction> {
+    const trans =  await this.transactionRepository.findOne({ where: { id: id } });
+    console.log(trans.bank, trans.category)
     return await this.transactionRepository.findOne({ where: { id: id } });
   }
 
