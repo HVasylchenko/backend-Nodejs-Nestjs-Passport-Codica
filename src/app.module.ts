@@ -10,15 +10,12 @@ import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import {ConfigModule} from "@nestjs/config";
 
-// require('dotenv').config();
-
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      //  envFilePath: `.env`
-      //  envFilePath: process.env.PORT
+      envFilePath: `.env`
     }),
     TypeOrmModule.forRoot({
       type: "postgres",
@@ -33,8 +30,7 @@ import {ConfigModule} from "@nestjs/config";
     BankModule,
     TransactionModule,
     CategoryModule,
-    AuthModule,
-    // RequestModule
+    AuthModule
   ],
   controllers: [],
   providers: [AuthService],

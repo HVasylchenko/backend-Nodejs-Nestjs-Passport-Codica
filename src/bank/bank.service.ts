@@ -3,7 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Bank } from "./bank.entity";
 import { Repository } from "typeorm";
 import { CreateBankDto } from "./dto/create-bank.dto";
-import { ALL } from "dns";
+
 
 @Injectable()
 export class BanksService {
@@ -11,7 +11,7 @@ export class BanksService {
     @InjectRepository(Bank)
     private readonly bankRepository: Repository<Bank>
   ) {}
-
+  s
   async create(dto: CreateBankDto): Promise<Bank> {
     return await this.bankRepository.save({ ...dto });
   }
