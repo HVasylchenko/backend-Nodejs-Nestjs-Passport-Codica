@@ -26,7 +26,9 @@ export class BankController {
   @ApiOperation({summary: 'Получить все банки'})
   @ApiResponse({status: 200, type: Bank})
   @Get()
+ 
   getAllBanks() {
+    console.log("getallbanks");
       return this.bankService.getAll();
   }
 
